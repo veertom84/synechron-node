@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Default Parameters Usage</title>
+    <script src="lib/traceur.js"></script>
+    <script src="lib/BrowserSystem.js"></script>
+    <script src="lib/bootstrap.js"></script>
+    <script type="module">
+        let heroes = {
+            herolist : [{
+                title : "Batman",
+                power : 7
+            }],
+            addHero : function(ht = "Default Title", hp = 0){
+                /*
+
+                var tempHt = ht || "Default Title";
+                var tempHp = hp || 0;
+                */
+                var tempHero = {
+                    title : ht,
+                    power : hp
+                };
+                this.herolist.push(tempHero);
+            }
+        };
+        console.log(heroes.herolist.length);/// 1
+        heroes.addHero("Ironman", 6);
+        console.log(heroes.herolist.length);/// 2
+        console.log(heroes.herolist);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
