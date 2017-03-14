@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ES6 Block Scope</title>
+    <script>
+       "use strict"
+        var hero = {
+            fname : "Bruce",
+            lname : "Wayne",
+            city : "Gotham",
+            power : 6
+        };
+
+        console.log(hero.city)// Gotham
+        console.log(hero.power)// 6
+        hero.power = 9;
+        hero.movie = "Batman Begins";
+        console.log(hero.power)// 9
+        console.log(hero.movie)//
+        // hero = "cant change";
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

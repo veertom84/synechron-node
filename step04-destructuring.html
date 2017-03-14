@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Destructuring</title>
+    <script src="lib/traceur.js"></script>
+    <script src="lib/BrowserSystem.js"></script>
+    <script src="lib/bootstrap.js"></script>
+    <script type="module">
+        /*
+        In ES5
+
+         var hero = { title : "Batman", power : 7};
+         var heroTitle = hero.title;
+         var heroPower = hero.power;
+         console.log(heroTitle,heroPower)
+
+         */
+
+        /*
+        In ES6
+         */
+        /*
+        // here the  heroTitle will get the assignment from hero.title
+        // heroPower will get the assignment from hero.power
+        const hero = { title : "Batman", power : 9};
+        const { title : heroTitle, power : heroPower } = hero;
+        console.log(heroTitle, heroPower);
+         */
+
+        /*
+         // here we are creating properties called title and power
+         // which are assigned from hero.title and hero.power
+         // since the names of the constants we create
+         // have the same names of the property we have not assigned any name to it..
+        const hero = { title : "Batman", power : 9};
+        const { title , power } = hero;
+        console.log(title, power);
+        */
+
+        /*
+        nested object destructuring
+         */
+        const hero = {
+            title : "Batman",
+            power : 9,
+            movies : {
+                firstMovie : "Batman Begins",
+                secondMovie : "Dark Knight",
+                thirdMovie : "Dark Knight Raises",
+            }};
+        /*
+        var secondMovie = hero.movies.secondMovie;
+        console.log(secondMovie);
+        */
+        const {movies : {secondMovie : alternateName}} = hero;
+        console.log(alternateName);
+
+        // destructuring an array;
+
+        const heroes = ["Batman","Superman","Ironman"];
+        // const fHero = heroes[0];
+        // const sHero = heroes[1];
+        // const tHero = heroes[2];
+
+        const [fHero, sHero, tHero] = heroes;
+        console.log(fHero,sHero,tHero);
+
+        // Multiple Assignment
+
+        var hero1 = "DeadPool";
+        var hero2 = "Flash";
+        var hero3 = "AquaMan";
+
+        const [h1,h2,h3] = [hero1,hero2,hero3];
+        console.log(h1+" is the h1's assignment from hero1");
+
+
+        const compList = { oldName : "Fusion" };
+        const {oldName : on, nn = "Synechron"} = compList ;
+        console.log(on,nn);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

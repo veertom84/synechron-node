@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Default Parameters</title>
+    <script src="lib/traceur.js"></script>
+    <script src="lib/BrowserSystem.js"></script>
+    <script src="lib/bootstrap.js"></script>
+    <script type="module">
+        /*
+        function add(num1, num2){
+            var num1 = num1;
+            var num2 = num2 || 0;
+            return num1+num2;
+        };
+        document.body.innerHTML += "<h1>"+add(2)+"</h1>"
+        */
+        function add(num1 = 0, num2 = 0){
+            return num1+num2;
+        };
+        document.body.innerHTML += "<h1>"+add(2)+"</h1>";
+    </script>
+</head>
+<body>
+
+</body>
+</html>
